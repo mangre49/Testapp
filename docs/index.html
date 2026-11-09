@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MotoLog</title>
+  <meta name="description" content="Fahrtenbuch für Motorradfahrer: Fahrten, Tachostand und Tankquittungen per Foto erfassen.">
+  <meta name="theme-color" content="#ff6b00">
+  <meta name="color-scheme" content="light dark">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="MotoLog">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1 id="title">Fahrten</h1>
+    <button id="menuBtn" class="icon-btn" aria-label="Sicherung und Einstellungen">
+      <svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+    </button>
+  </header>
+
+  <main id="view" aria-live="polite"></main>
+
+  <button id="fab" class="fab" hidden>
+    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span>Neu</span>
+  </button>
+
+  <nav class="tabbar" aria-label="Bereiche">
+    <button data-tab="rides" aria-current="page">
+      <svg viewBox="0 0 24 24"><path d="M4 17a8 8 0 1 1 16 0"/><path d="m12 17 4-6"/></svg><span>Fahrten</span>
+    </button>
+    <button data-tab="fuel">
+      <svg viewBox="0 0 24 24"><path d="M5 20V5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v15M4 20h11M6 9h7"/><path d="M14 8l3 2v7a1.5 1.5 0 0 0 3 0V8l-3-3"/></svg><span>Tanken</span>
+    </button>
+    <button data-tab="stats">
+      <svg viewBox="0 0 24 24"><path d="M5 20V11M12 20V5M19 20v-6"/></svg><span>Statistik</span>
+    </button>
+  </nav>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <noscript><p style="padding:24px">MotoLog benötigt JavaScript.</p></noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
